@@ -231,7 +231,6 @@ h1, h2, nav, ul, li{
 .technologies{
   border-left:  1px solid #76FF03;
   width: 45%;
-  min-width: 300px;
   margin-top: 20px;
   margin-bottom: 5px;
 }
