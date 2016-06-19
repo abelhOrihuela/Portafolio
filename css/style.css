@@ -1,7 +1,6 @@
 html {
-  height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
+  height: 50vh;
+  background-color: #182330;
 }
 
 #stars {
@@ -149,7 +148,6 @@ nav ul a:hover {
 
 .main_container{
   width: 100%;
-  height: auto;
 }
 h1, h2, nav, ul, li{
   margin: 0;
@@ -233,6 +231,9 @@ h1, h2, nav, ul, li{
 .technologies{
   border-left:  1px solid #76FF03;
   width: 45%;
+  min-width: 300px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .technologies img{
@@ -243,7 +244,7 @@ h1, h2, nav, ul, li{
   width:100%;
   text-align: left;
   margin-left: 1em;
-  font-size: 2em;
+  font-size: 5vh;
 }
 .title-technologies{
   text-align: left;
