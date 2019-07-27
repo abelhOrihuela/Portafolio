@@ -1,0 +1,32 @@
+@import "~bulma/bulma.sass";
+
+
+#background-page{
+  background-color:#050815;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+    z-index: -999;
+
+}
+#background-page:before{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: '';
+  opacity: 0.8;
+  background-image: url('/bg2.jpg');
+    background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -999;
+}
+
+.image-shadow {
+  img {
+    box-shadow: 3px 3px 10px black;
+  }
+}
