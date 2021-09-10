@@ -10,8 +10,10 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
      
       <div id='background-page' />
-      <div className='section'>
-        {children}
+      <div className='container'>
+        <div className='section'>
+          {children}
+        </div>
       </div>
     </>
   )

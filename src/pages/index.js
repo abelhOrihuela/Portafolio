@@ -9,33 +9,28 @@ import "../styles/index.scss"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <div className="columns">
+      <div className="column is-2">
+        <figure class="image is-square image-shadow">
+          <img src={'abel.jpeg'} alt="Logo" />
+        </figure>
+        
+      </div>
+      <div className="column">
+        <p class="title is-4 has-text-white">Abel Orihuela</p>
+        <p class="subtitle is-6 has-text-white">@abelhOrihuela</p>
 
-
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-96x96 image-shadow">
-            <img src="abel.jpeg" alt="Placeholder image" />
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-4 has-text-white">Abel Orihuela</p>
-          <p class="subtitle is-6 has-text-white">@abelhOrihuela</p>
-          
-          <p class="subtitle is-6 has-text-white">
-            Software engineer with 7+ years of experience developing web applications for fields such as fintech, wellness, bioinformatic, ecommerce and data analysis. I have great problem-solving skills I am highly proficient. I am interested in the challenges of data analysis, data processing, functional programming and devops and I am interested in the usage of python and javascript.
-          </p>
-          <p class="subtitle is-6 has-text-white">
-            Experienced with all stages of the development cycle for web projects.
-          </p>
-        </div>
+        <p class="subtitle is-6 has-text-white">
+          Software engineer with 7+ years of experience developing web applications for fields such as fintech, wellness, bioinformatic, ecommerce and data analysis. I have great problem-solving skills I am highly proficient. I am interested in the challenges of data analysis, data processing, functional programming and devops and I am interested in the usage of python and javascript.
+        </p>
+        <p class="subtitle is-6 has-text-white">
+          Experienced with all stages of the development cycle for web projects.
+        </p>
       </div>
     </div>
 
+    <p class="title is-4 has-text-white">Work experience</p>
 
-    <h2 className='title is-2 has-text-white'>
-      Work experience
-    </h2>
 
     <div className='card'>
       <div className='card-content'>
