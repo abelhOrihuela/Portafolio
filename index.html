@@ -1,68 +1,86 @@
----
-layout: default
-title: Jekyll Themes
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Orihuela Mendoza</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="about">
+    
+        <div class="row section-intro">
+            <div class="col-twelve">
+    
+                <h1>Abel Orihuela Mendoza.</h1>
+                    <h5>Software Engineer</h5>
 
-<div class="row-fluid">
-  <div class="col-lg-12 text-center">
-    <div class="form-group">
-      <form action="/search/" method="get">
-        <input type="text" id="search_box" placeholder="Search..." name="query" class="form-control" style="width:100%">
-      </form>
-    </div>
-  </div>
-</div>
+                <div class="intro-info">
+    
+                    <!-- <img src="https://secure.gravatar.com/avatar/5f9a29a8407e88a611b5bd004408018e" alt="Profile Picture"> -->
+    
+                    <p class="lead">
+                        I am a software engineer with 7+ years of experience developing web applications for fields such
+                        as fintech, wellness, bioinformatic, ecommerce and data analysis. I have great
+                        problem-solving skills and I am highly proficient and interested in the usage of python,
+                        javascript, functional programming, devops and product building.
+                    </p>
+                </div>
+    
+            </div>
+        </div> <!-- /section-intro -->
 
-<div class="gallery">
-  {% for post in paginator.posts %}
-  <div class="item">
-    <a class="item-inner" href="{{ post.url }}">
-      <div class="item-image"><img src="/thumbnails/{{ post.thumbnail }}"></div>
-      <div class="item-name">{{ post.title }}</div>
-    </a>
-  </div>
-  {% endfor %}
-</div>
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h1>Topics</h1>
+            </div>
+            <div class="col-twelve">
+                <div class="container-tags">
+                    <div class="tag">
+                        Software development
+                    </div>
+                    <div class="tag">
+                        3d printing + woodworking
+                    </div>
+                </div>
+        
+            </div>
+        </div>
 
-<!-- Pager -->
+        <div class='row section-intro'>
+            <div class='col-twelve'>
+                <figure class="image image image-shadow is-5by4">
+                    <img src="./public/platzi-tals.jpeg" alt="Logo" />
+                </figure>
+                <br />
+                <h3 class='title is-5 has-text-white'>
+                    React Native Talk | Platzi Developer Group CDMX
+                </h3>
+            </div>
+            <div class='column is-2'>
+                <figure class="image image image-shadow is-5by4">
+                    <img src="./public/atom-react.jpg" alt="Logo" />
+                </figure>
+                <br />
+                <h3 class='title is-5 has-text-white'>
+                    React Talk | Atom Academy Toluca
+                </h3>
+            </div>
+            <div class='column is-2'>
+                <figure class="image image image-shadow is-5by4">
+                    <img src="./public/react-univer.jpg" alt="Logo" />
+                </figure>
+                <br />
+                <h3 class='title is-5 has-text-white'>
+                    React Native + Expo Talk | Univer Milenium Toluca
+                </h3>
+            </div>
+        </div>
+  
+       
+    
+    
+    </section>
 
-<div class="row-fluid">
-  <div class="span12">
-    <div class="pagination">
-      <ul>
-        {% if paginator.previous_page %}
-
-          {% if paginator.previous_page == 1 %}
-            <li><a href="/">Prev</a></li>
-          {% else %}
-            <li><a href="/page{{ paginator.previous_page }}">Prev</a></li>
-          {% endif %}
-
-        {% else %}
-          <li><span class="disabled">Prev</span></li>
-        {% endif %}
-
-        {% if paginator.page == 1 %}
-          <li><span class="active">1</span></li>
-        {% else %}
-          <li><a href="/">1</a></li>
-        {% endif %}
-
-        {% for count in (2..paginator.total_pages) %}
-
-          {% if count == paginator.page %}
-            <li><span class="active">{{ count }}</span></li>
-          {% else %}
-            <li><a href="/page{{ count }}">{{ count }}</a></li>
-          {% endif %}
-        {% endfor %}
-
-        {% if paginator.next_page %}
-          <li><a href="/page{{ paginator.next_page }}">Next</a></li>
-        {% else %}
-          <li><span class="disabled">Next</span></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
-</div>
+</body>
+</html>
