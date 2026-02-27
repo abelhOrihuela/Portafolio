@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles');
+const sortedArticles = articles.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const base = import.meta.env.BASE_URL;
+
+function toSlug(id: string) {
+  return id.replace(/\.(md|mdx)$/, '');
+}
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+---
+
+<Layout
+  title="Articles — Abel Orihuela"
+  description="Thoughts on software engineering, DevOps, 3D printing and building things."
+>
+  <Nav />
+
+  <main class="px-20 py-16 flex flex-col gap-16 min-h-[70vh]">
+    <div class="flex flex-col gap-4 border-b border-[#F0F0F0] pb-12">
+      <h1 class="font-sora text-5xl font-semibold text-black">Articles</h1>
+      <p class="font-dm text-base text-[#666666] max-w-[480px]">
+        Thoughts on engineering, building products, and making things.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-x-6 gap-y-16">
+      {
+        sortedArticles.map((article) => (
+          <a href={`${base}articles/${toSlug(article.id)}`} class="flex flex-col group">
+            {article.data.image && (
+              <div class="h-[240px] overflow-hidden mb-6">
+                <img
+                  src={article.data.image}
+                  alt={article.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            )}
+            <div class="flex flex-col gap-3">
+              <span class="font-dm text-[11px] font-medium text-[#AAAAAA] tracking-[2px] uppercase">
+                {article.data.category}
+              </span>
+              <h2 class="font-sora text-[22px] font-semibold leading-[1.3] text-black group-hover:opacity-70 transition-opacity">
+                {article.data.title}
+              </h2>
+              <p class="font-dm text-sm text-[#666666] leading-[1.6]">
+                {article.data.description}
+              </p>
+              <span class="font-dm text-xs text-[#AAAAAA] mt-1">
+                {formatDate(article.data.date)} &nbsp;•&nbsp; {article.data.readTime}
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

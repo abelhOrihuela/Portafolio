@@ -1,0 +1,165 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { slug: article.id.replace(/\.(md|mdx)$/, '') },
+    props: { article },
+  }));
+}
+
+function toSlug(id: string) {
+  return id.replace(/\.(md|mdx)$/, '');
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const base = import.meta.env.BASE_URL;
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+---
+
+<Layout title={`${article.data.title} — Abel Orihuela`} description={article.data.description}>
+  <Nav />
+
+  <main class="px-20 py-16">
+    <!-- Back link -->
+    <a
+      href={`${base}articles`}
+      class="inline-flex items-center gap-2 font-dm text-sm text-[#AAAAAA] hover:text-black transition-colors mb-12"
+    >
+      ← All articles
+    </a>
+
+    <div class="max-w-[720px]">
+      <!-- Header -->
+      <div class="flex flex-col gap-5 mb-10">
+        <span class="font-dm text-[11px] font-medium text-[#AAAAAA] tracking-[2px] uppercase">
+          {article.data.category}
+        </span>
+        <h1 class="font-sora text-[48px] font-semibold leading-[1.15] text-black">
+          {article.data.title}
+        </h1>
+        <div class="flex items-center gap-2">
+          <span class="font-dm text-sm text-[#AAAAAA]">{formatDate(article.data.date)}</span>
+          <span class="text-[#AAAAAA]">&nbsp;•&nbsp;</span>
+          <span class="font-dm text-sm text-[#AAAAAA]">{article.data.readTime}</span>
+        </div>
+      </div>
+
+      <!-- Cover image -->
+      {
+        article.data.image && (
+          <img
+            src={article.data.image}
+            alt={article.data.title}
+            class="w-full h-[400px] object-cover mb-12"
+          />
+        )
+      }
+
+      <!-- Content -->
+      <div class="article-body font-dm text-base leading-[1.8] text-[#333333]">
+        <Content />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .article-body :global(h2) {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-body :global(h3) {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-body :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body :global(strong) {
+    font-weight: 500;
+    color: #000;
+  }
+
+  .article-body :global(code) {
+    background: #f5f5f5;
+    padding: 0.15em 0.4em;
+    font-size: 0.875em;
+    font-family: 'Menlo', 'Monaco', monospace;
+  }
+
+  .article-body :global(pre) {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.75rem;
+    font-size: 0.875em;
+    line-height: 1.7;
+  }
+
+  .article-body :global(pre code) {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .article-body :global(ul),
+  .article-body :global(ol) {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body :global(ul) {
+    list-style: disc;
+  }
+
+  .article-body :global(ol) {
+    list-style: decimal;
+  }
+
+  .article-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 3px solid #000;
+    padding-left: 1.25rem;
+    color: #666;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+
+  .article-body :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body :global(hr) {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 2.5rem 0;
+  }
+</style>

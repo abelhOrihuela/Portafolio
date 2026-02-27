@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sora: "Sora", sans-serif;
+  --font-dm: "DM Sans", sans-serif;
+}
