@@ -30,6 +30,7 @@ function formatDate(date: Date) {
   <Nav />
 
   <main class="px-5 py-12 md:px-20 md:py-16">
+    <div class="max-w-[720px] mx-auto">
     <!-- Back link -->
     <a
       href={`${base}articles`}
@@ -37,14 +38,12 @@ function formatDate(date: Date) {
     >
       ← All articles
     </a>
-
-    <div class="max-w-[720px]">
       <!-- Header -->
       <div class="flex flex-col gap-5 mb-10">
         <span class="font-dm text-[11px] font-medium text-[#AAAAAA] tracking-[2px] uppercase">
           {article.data.category}
         </span>
-        <h1 class="font-sora text-[48px] font-semibold leading-[1.15] text-black">
+        <h1 class="font-sora text-[32px] md:text-[48px] font-semibold leading-[1.15] text-black">
           {article.data.title}
         </h1>
         <div class="flex items-center gap-2">

@@ -33,7 +33,7 @@ function formatDate(date: Date) {
         Abel<br />Orihuela<br />Mendoza.
       </h1>
       <p class="font-dm text-base leading-[1.7] text-[#666666] max-w-[520px]">
-        Software engineer with 7+ years of experience building web applications across fintech,
+        Software engineer with 10+ years of experience building web applications across fintech,
         wellness, bioinformatics, ecommerce and data analysis. Proficient in Python, JavaScript,
         functional programming, DevOps and product building.
       </p>
@@ -54,7 +54,7 @@ function formatDate(date: Date) {
     </div>
     <div class="flex-shrink-0 w-full md:w-auto">
       <img
-        src={`${base}abel.jpeg`}
+        src={`${base}reactnative.png`}
         alt="Abel Orihuela Mendoza"
         class="w-full h-[320px] md:w-[420px] md:h-[520px] object-cover object-top"
       />
@@ -69,7 +69,7 @@ function formatDate(date: Date) {
       <h2 class="font-sora text-4xl md:text-5xl font-semibold text-black">Topics</h2>
       <span class="font-dm text-sm text-[#888888]">What I write &amp; build about</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
       <!-- Software Development -->
       <div class="flex flex-col justify-between p-7 h-[200px] bg-white border border-[#F0F0F0]">
         <svg
@@ -92,7 +92,8 @@ function formatDate(date: Date) {
         </div>
       </div>
 
-      <!-- 3D Printing + Woodworking -->
+      <!-- 3D Printing + Woodworking (TODO: enable in the future) -->
+      <!--
       <div class="flex flex-col justify-between p-7 h-[200px] bg-black">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -116,6 +117,7 @@ function formatDate(date: Date) {
           <p class="font-dm text-[13px] text-[#888888]">Maker projects and physical crafts</p>
         </div>
       </div>
+      -->
 
       <!-- DevOps & Architecture -->
       <div class="flex flex-col justify-between p-7 h-[200px] bg-white border border-[#F0F0F0]">
@@ -196,13 +198,12 @@ function formatDate(date: Date) {
       <h2 class="font-sora text-4xl md:text-5xl font-semibold text-white">Experience</h2>
       <p class="font-dm text-[15px] text-[#666666]">Years of building real products for real users.</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-y-10 w-full">
       {
         [
-          { num: '7+', label: 'Years of experience' },
+          { num: '10+', label: 'Years of experience' },
           { num: '5+', label: 'Industries served' },
           { num: '20+', label: 'Projects delivered' },
-          { num: '3', label: 'Countries worked in' },
         ].map(({ num, label }) => (
           <div class="flex flex-col gap-2">
             <span class="font-sora text-[56px] md:text-[64px] font-bold text-white leading-none">{num}</span>
@@ -219,16 +220,15 @@ function formatDate(date: Date) {
       <div class="flex items-center gap-6 md:gap-8 flex-wrap">
         {
           [
-            'Python',
+            'Node.js',
             'JavaScript',
             'React',
-            'Node.js',
             'Docker',
-            'AWS',
-            'PostgreSQL',
-            'Terraform',
-            'Linux',
+            'Kotlin',
+            'Python',
+            'SQL',
             'Git',
+            'Linux',
           ].map((tech) => (
             <span class="font-dm text-sm text-white">{tech}</span>
           ))
