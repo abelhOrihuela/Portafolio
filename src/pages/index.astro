@@ -24,20 +24,20 @@ function formatDate(date: Date) {
   <Nav />
 
   <!-- Hero -->
-  <section class="px-20 py-[100px] flex gap-20 items-center">
+  <section class="px-5 py-16 md:px-20 md:py-[100px] flex flex-col-reverse gap-10 md:flex-row md:gap-20 items-center">
     <div class="flex-1 flex flex-col gap-8">
       <span class="font-dm text-[11px] font-medium text-[#AAAAAA] tracking-[4px] uppercase">
         Software Engineer
       </span>
-      <h1 class="font-sora text-[72px] font-bold leading-[1.05] text-black w-[580px]">
+      <h1 class="font-sora text-[52px] md:text-[72px] font-bold leading-[1.05] text-black">
         Abel<br />Orihuela<br />Mendoza.
       </h1>
-      <p class="font-dm text-base leading-[1.7] text-[#666666] w-[520px]">
+      <p class="font-dm text-base leading-[1.7] text-[#666666] max-w-[520px]">
         Software engineer with 7+ years of experience building web applications across fintech,
         wellness, bioinformatics, ecommerce and data analysis. Proficient in Python, JavaScript,
         functional programming, DevOps and product building.
       </p>
-      <div class="flex items-center gap-4">
+      <div class="flex flex-wrap items-center gap-4">
         <a
           href="#contact"
           class="bg-black text-white font-dm text-sm font-medium px-8 py-3.5 inline-block"
@@ -52,11 +52,11 @@ function formatDate(date: Date) {
         </a>
       </div>
     </div>
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 w-full md:w-auto">
       <img
         src={`${base}abel.jpeg`}
         alt="Abel Orihuela Mendoza"
-        class="w-[420px] h-[520px] object-cover"
+        class="w-full h-[320px] md:w-[420px] md:h-[520px] object-cover object-top"
       />
     </div>
   </section>
@@ -64,12 +64,12 @@ function formatDate(date: Date) {
   <div class="h-px bg-[#F0F0F0]"></div>
 
   <!-- Topics -->
-  <section class="bg-[#F5F5F5] p-20 flex flex-col gap-12">
-    <div class="flex items-end justify-between w-full">
-      <h2 class="font-sora text-5xl font-semibold text-black">Topics</h2>
+  <section class="bg-[#F5F5F5] px-5 py-14 md:p-20 flex flex-col gap-10 md:gap-12">
+    <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between w-full">
+      <h2 class="font-sora text-4xl md:text-5xl font-semibold text-black">Topics</h2>
       <span class="font-dm text-sm text-[#888888]">What I write &amp; build about</span>
     </div>
-    <div class="grid grid-cols-3 gap-5 w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full">
       <!-- Software Development -->
       <div class="flex flex-col justify-between p-7 h-[200px] bg-white border border-[#F0F0F0]">
         <svg
@@ -144,10 +144,10 @@ function formatDate(date: Date) {
   </section>
 
   <!-- Articles -->
-  <section class="bg-white p-20 flex flex-col gap-12">
-    <div class="flex items-end justify-between w-full">
+  <section class="bg-white px-5 py-14 md:p-20 flex flex-col gap-10 md:gap-12">
+    <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between w-full">
       <div class="flex flex-col gap-2">
-        <h2 class="font-sora text-5xl font-semibold text-black">Latest Articles</h2>
+        <h2 class="font-sora text-4xl md:text-5xl font-semibold text-black">Latest Articles</h2>
         <p class="font-dm text-[15px] text-[#888888]">
           Thoughts on engineering, building products, and making things.
         </p>
@@ -160,7 +160,7 @@ function formatDate(date: Date) {
         <span>→</span>
       </a>
     </div>
-    <div class="grid grid-cols-3 gap-6 w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 w-full">
       {
         latestArticles.map((article) => (
           <a href={`${base}articles/${toSlug(article.id)}`} class="flex flex-col group">
@@ -191,12 +191,12 @@ function formatDate(date: Date) {
   </section>
 
   <!-- Experience -->
-  <section class="bg-black p-20 flex flex-col gap-14">
+  <section class="bg-black px-5 py-14 md:p-20 flex flex-col gap-12 md:gap-14">
     <div class="flex flex-col gap-3">
-      <h2 class="font-sora text-5xl font-semibold text-white">Experience</h2>
+      <h2 class="font-sora text-4xl md:text-5xl font-semibold text-white">Experience</h2>
       <p class="font-dm text-[15px] text-[#666666]">Years of building real products for real users.</p>
     </div>
-    <div class="grid grid-cols-4 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 w-full">
       {
         [
           { num: '7+', label: 'Years of experience' },
@@ -205,7 +205,7 @@ function formatDate(date: Date) {
           { num: '3', label: 'Countries worked in' },
         ].map(({ num, label }) => (
           <div class="flex flex-col gap-2">
-            <span class="font-sora text-[64px] font-bold text-white leading-none">{num}</span>
+            <span class="font-sora text-[56px] md:text-[64px] font-bold text-white leading-none">{num}</span>
             <span class="font-dm text-sm text-[#666666] mt-2">{label}</span>
           </div>
         ))
@@ -216,7 +216,7 @@ function formatDate(date: Date) {
         Tech Stack
       </span>
       <div class="h-px bg-[#222222] w-full"></div>
-      <div class="flex items-center gap-8 flex-wrap">
+      <div class="flex items-center gap-6 md:gap-8 flex-wrap">
         {
           [
             'Python',
@@ -238,8 +238,8 @@ function formatDate(date: Date) {
   </section>
 
   <!-- CTA -->
-  <section id="contact" class="bg-[#F5F5F5] p-20 flex flex-col items-center gap-8">
-    <h2 class="font-sora text-5xl font-semibold text-black text-center">
+  <section id="contact" class="bg-[#F5F5F5] px-5 py-14 md:p-20 flex flex-col items-center gap-8">
+    <h2 class="font-sora text-4xl md:text-5xl font-semibold text-black text-center">
       Let's build something together.
     </h2>
     <p class="font-dm text-base text-[#888888] text-center max-w-[560px]">
