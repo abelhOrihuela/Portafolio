@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://abelhorihuela.github.io',
-  base: '/Portafolio',
+  base: '/Portafolio/',
   build: {
     assets: 'assets',
   },
