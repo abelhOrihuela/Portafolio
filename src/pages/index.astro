@@ -27,23 +27,19 @@ function formatDate(date: Date) {
   <section class="px-5 py-16 md:px-20 md:py-[100px] flex flex-col-reverse gap-10 md:flex-row md:gap-20 items-center">
     <div class="flex-1 flex flex-col gap-8">
       <span class="font-dm text-[11px] font-medium text-[#AAAAAA] tracking-[4px] uppercase">
-        Software Engineer
+        Senior Software Engineer
       </span>
       <h1 class="font-sora text-[52px] md:text-[72px] font-bold leading-[1.05] text-black">
         Abel<br />Orihuela<br />Mendoza.
       </h1>
       <p class="font-dm text-base leading-[1.7] text-[#666666] max-w-[520px]">
-        Software engineer with 10+ years of experience building web applications across fintech,
-        wellness, bioinformatics, ecommerce and data analysis. Proficient in Python, JavaScript,
-        functional programming, DevOps and product building.
+        Senior software engineer with 10+ years of experience designing and building scalable web
+        applications across industrial automation, fintech, wellness, bioinformatics, ecommerce
+        and analytics. Proficient in TypeScript, Node.js, React, Kotlin, cloud infrastructure and
+        product engineering.
       </p>
       <div class="flex flex-wrap items-center gap-4">
-        <a
-          href="#contact"
-          class="bg-black text-white font-dm text-sm font-medium px-8 py-3.5 inline-block"
-        >
-          Get in touch
-        </a>
+
         <a
           href={`${base}articles`}
           class="border border-black text-black font-dm text-sm font-medium px-8 py-3.5 inline-block"
@@ -202,7 +198,7 @@ function formatDate(date: Date) {
       {
         [
           { num: '10+', label: 'Years of experience' },
-          { num: '5+', label: 'Industries served' },
+          { num: '6+', label: 'Industries served' },
           { num: '20+', label: 'Projects delivered' },
         ].map(({ num, label }) => (
           <div class="flex flex-col gap-2">
@@ -220,15 +216,18 @@ function formatDate(date: Date) {
       <div class="flex items-center gap-6 md:gap-8 flex-wrap">
         {
           [
-            'Node.js',
+            'TypeScript',
             'JavaScript',
+            'Node.js',
             'React',
-            'Docker',
-            'Kotlin',
+            'Next.js',
             'Python',
-            'SQL',
+            'Kotlin',
+            'Docker',
+            'AWS',
+            'PostgreSQL',
+            'GraphQL',
             'Git',
-            'Linux',
           ].map((tech) => (
             <span class="font-dm text-sm text-white">{tech}</span>
           ))
@@ -246,10 +245,11 @@ function formatDate(date: Date) {
       Open to collaborations, consulting, and interesting conversations.
     </p>
     <a
-      href="mailto:hello@abelorihuela.dev"
+      href="https://www.linkedin.com/in/abelh-orihuela/"
+      target="_blank"
       class="bg-black text-white font-dm text-sm font-medium px-10 py-4 inline-block"
     >
-      Send me an email
+      Contact me
     </a>
   </section>
 
